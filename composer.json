@@ -1,0 +1,10 @@
+{
+    "name": "giangmd/phpcs",
+    "authors": [
+        {
+            "name": "giangmd",
+            "email": "giangmd93@gmail.com"
+        }
+    ],
+    "require": {}
+}
