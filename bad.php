@@ -1,21 +1,24 @@
 <?php
 
 class photo_download {
-    function download_photo($size){
-        $thumLink="https://thumb.photo-ac.com";
+    function download($size){
+        $domain="http://example.com";
         if($size=="s"){
-            $thumLink = $thumLink."s.jpeg";
+            $downloadLink = $domain."s.jpeg";
         }elseif($size=="l"){
-            $thumLink = $thumLink."l.jpeg";
+            $downloadLink = $domain."l.jpeg";
         }elseif($size=="m"){
-            $thumLink = $thumLink."m.jpeg";
+            $downloadLink = $domain."m.jpeg";
         }else{
-            $thumLink = $thumLink."s.jpeg";
+            $downloadLink = $domain."s.jpeg";
         }
         
-        if(file_exists($thumLink)){
-            $link_dl='';
+        if(file_exists($downloadLink)){
+            header('Content-Type: application/octet-stream');
+            header("Content-Transfer-Encoding: Binary");
+            header("Content-disposition: attachment; filename=\"".$downloadLink."\"");
+        }else{
+            header("Location: http://example.com");
         }
-        return $link_dl;
     }
 }
